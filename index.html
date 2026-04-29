@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bunkers Inc. — 2HN Games</title>
+    <meta name="description"
+        content="Bunkers Inc. — Roguelike de supervivencia post-apocalíptico. Sobrevive en tu búnker, sal de expedición y fabrica un traje antirradiación antes de que sea tarde.">
+
+    <!-- Open Graph para previews en redes -->
+    <meta property="og:title" content="Bunkers Inc.">
+    <meta property="og:description" content="Roguelike de supervivencia post-apocalíptico. 2HN Games.">
+    <meta property="og:image" content="images/og-image.png">
+    <meta property="og:type" content="website">
+
+    <!-- Tipografías: display militar + terminal CRT + cuerpo industrial -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=VT323&family=Barlow:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+
+    <!-- ============================================== -->
+    <!-- OVERLAYS GLOBALES (ruido + scanlines sutiles)  -->
+    <!-- ============================================== -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <!-- ============================================== -->
+    <!-- NAVEGACIÓN                                     -->
+    <!-- ============================================== -->
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="#top" class="nav__brand">
+                <span class="nav__brand-mark">B</span>
+                <span class="nav__brand-text">
+                    <span class="nav__brand-title">Bunkers Inc.</span>
+                    <span class="nav__brand-sub">2HN GAMES</span>
+                </span>
+            </a>
+            <ul class="nav__links">
+                <li><a href="#sobre">Sobre el juego</a></li>
+                <li><a href="#mecanicas">Mecánicas</a></li>
+                <li><a href="#trailer">Tráiler</a></li>
+                <li><a href="#capturas">Capturas</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+            </ul>
+            <a href="#descarga" class="btn btn--small btn--primary">Jugar</a>
+        </div>
+    </nav>
+
+    <!-- ============================================== -->
+    <!-- HERO                                           -->
+    <!-- ============================================== -->
+    <header class="hero" id="top">
+        <!-- Fondo en capas: cielo tóxico + ciudad en silueta -->
+        <div class="hero__sky" aria-hidden="true"></div>
+        <div class="hero__skyline" aria-hidden="true"></div>
+        <div class="hero__fog" aria-hidden="true"></div>
+
+        <!-- Indicador tipo HUD del juego -->
+        <div class="hero__hud" aria-hidden="true">
+            <span class="hud-pill"><span class="hud-dot"></span> EN DESARROLLO</span>
+            <span class="hud-pill hud-pill--mono">DÍA 30 · BÚNKER OPERATIVO</span>
+        </div>
+
+        <div class="hero__content">
+            <p class="hero__eyebrow">Proyecto académico · Universidad Complutense de Madrid</p>
+            <h1 class="hero__title">
+                <span class="hero__title-line">BUNKERS</span>
+                <span class="hero__title-line hero__title-line--accent">INC.</span>
+            </h1>
+            <p class="hero__tagline">
+                Sobrevive. Explora. Fabrica el traje antes de que el búnker colapse.
+            </p>
+
+            <!-- Tags de género -->
+            <ul class="hero__tags">
+                <li>Roguelike</li>
+                <li>Supervivencia</li>
+                <li>Gestión de recursos</li>
+                <li>Pixel-art top-down</li>
+            </ul>
+
+            <div class="hero__ctas">
+                <a href="#descarga" class="btn btn--primary btn--large">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path d="M5 3l14 9-14 9V3z" fill="currentColor" />
+                    </svg>
+                    Jugar ahora
+                </a>
+                <a href="#trailer" class="btn btn--ghost btn--large">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" />
+                    </svg>
+                    Ver tráiler
+                </a>
+            </div>
+        </div>
+
+        <!-- Indicador de scroll -->
+        <a href="#sobre" class="hero__scroll" aria-label="Bajar a contenido">
+            <span></span>
+        </a>
+    </header>
+
+    <!-- Banda de advertencia de radiación entre secciones -->
+    <div class="hazard-band" aria-hidden="true"></div>
+
+    <main>
+
+        <!-- ============================================== -->
+        <!-- SOBRE EL JUEGO                                 -->
+        <!-- ============================================== -->
+        <section class="section" id="sobre">
+            <div class="section__inner two-col">
+                <div class="section__head two-col__head">
+                    <span class="section__num">01 //</span>
+                    <h2 class="section__title">Sobre el juego</h2>
+                </div>
+
+                <div class="two-col__body">
+                    <p class="lead">
+                        Tras un evento nuclear global, el exterior está contaminado por radiación. Vives en un búnker
+                        que empieza a fallar y solo los asentamientos militares conservan equipamiento avanzado.
+                    </p>
+                    <p>
+                        En <strong>Bunkers Inc.</strong> alternas entre la gestión de tu base y expediciones
+                        procedurales al exterior. Cada día decides si arriesgarte a salir a por recursos, mejorar tu
+                        arma con la chatarra que has reunido o quedarte a salvo. Tu objetivo: <strong>fabricar el traje
+                            antirradiación</strong> antes de que el búnker colapse.
+                    </p>
+                    <p>
+                        Combate cuerpo a cuerpo direccional, inventario tipo rejilla, eventos diarios por radio, jefes
+                        con piezas del traje y una tensión constante entre <em>volver con las manos llenas</em> y
+                        <em>volver con vida</em>.
+                    </p>
+
+                    <ul class="objectives">
+                        <li>
+                            <span class="objective__icon objective__icon--win">★</span>
+                            <div>
+                                <strong>Victoria:</strong>
+                                Completa el traje antirradiación antes del día límite.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="objective__icon objective__icon--lose">✕</span>
+                            <div>
+                                <strong>Derrota:</strong>
+                                Quedarte sin recursos, morir en combate o no fabricar el traje a tiempo.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- MECÁNICAS                                      -->
+        <!-- ============================================== -->
+        <section class="section section--alt" id="mecanicas">
+            <div class="section__inner">
+                <div class="section__head">
+                    <span class="section__num">02 //</span>
+                    <h2 class="section__title">Mecánicas principales</h2>
+                    <p class="section__lead">El bucle del juego se divide en dos zonas: la seguridad del búnker y el
+                        riesgo del exterior.</p>
+                </div>
+
+                <!-- Sub-encabezado -->
+                <h3 class="subhead"><span class="subhead__bar"></span>Búnker · zona segura</h3>
+                <div class="features">
+                    <article class="feature">
+                        <div class="feature__icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 4 L26 10 L26 22 L16 28 L6 22 L6 10 Z" />
+                                <circle cx="16" cy="16" r="3" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <h4>Gestión de recursos</h4>
+                        <p>Comida, agua, baterías, vendas y chatarra. Cada día consumes recursos para sobrevivir y
+                            entras en penalización si te quedas sin alguno.</p>
+                    </article>
+
+                    <article class="feature">
+                        <div class="feature__icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="4" y="6" width="24" height="14" rx="2" />
+                                <circle cx="11" cy="13" r="2.5" />
+                                <path d="M16 18 L22 13 L26 16" />
+                                <path d="M14 24 L18 24 M16 20 L16 28" />
+                            </svg>
+                        </div>
+                        <h4>Eventos aleatorios</h4>
+                        <p>Cada mañana la radio del búnker comunica eventos internos y externos: variaciones de loot,
+                            oleadas de enemigos o pérdidas de comida.</p>
+                    </article>
+
+                    <article class="feature">
+                        <div class="feature__icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M8 24 L16 6 L24 24 Z" />
+                                <path d="M12 18 L20 18" />
+                                <circle cx="16" cy="22" r="1.5" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <h4>Mejora de armas</h4>
+                        <p>Invierte chatarra en mejorar daño, velocidad, rango, crítico o fortuna. Tres opciones
+                            aleatorias por mejora y un reroll cada vez más caro.</p>
+                    </article>
+                </div>
+
+                <h3 class="subhead"><span class="subhead__bar"></span>Exterior · expedición</h3>
+                <div class="features">
+                    <article class="feature">
+                        <div class="feature__icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 22 L14 8 L18 14 L22 10 L26 22 Z" />
+                                <path d="M9 26 L23 26" />
+                            </svg>
+                        </div>
+                        <h4>Combate y enemigos</h4>
+                        <p>Ataque direccional a 8 direcciones. Enemigos con máquina de estados (Idle, Patrol, Chase,
+                            Attack, Return) y escalado por fases.</p>
+                    </article>
+
+                    <article class="feature">
+                        <div class="feature__icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="5" y="5" width="9" height="9" />
+                                <rect x="18" y="5" width="9" height="9" />
+                                <rect x="5" y="18" width="9" height="9" />
+                                <rect x="18" y="18" width="9" height="9" />
+                            </svg>
+                        </div>
+                        <h4>Inventario tipo rejilla</h4>
+                        <p>Capacidad limitada con piezas de distinto tamaño. Arrastra, organiza y decide qué te llevas.
+                            Al volver, todo se vuelca al almacén.</p>
+                    </article>
+
+                    <article class="feature">
+                        <div class="feature__icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 4 L20 12 L28 12 L22 18 L24 26 L16 22 L8 26 L10 18 L4 12 L12 12 Z" />
+                            </svg>
+                        </div>
+                        <h4>Generación procedural</h4>
+                        <p>Mapas de salas conectadas construidos con tilemaps. Iluminación con linterna, tiempo límite
+                            por contaminación y jefes que dropean piezas del traje.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- TRÁILER                                        -->
+        <!-- ============================================== -->
+        <section class="section" id="trailer">
+            <div class="section__inner">
+                <div class="section__head">
+                    <span class="section__num">03 //</span>
+                    <h2 class="section__title">Tráiler</h2>
+                    <p class="section__lead">Una mirada al prototipo actual del juego.</p>
+                </div>
+
+                <!-- Para incrustar YouTube cambia el src del iframe por el de tu vídeo -->
+                <div class="video">
+                    <div class="video__frame">
+                        <iframe src="https://www.youtube.com/embed/IH73niJf40E?start=2"
+                            title="Bunkers Inc. — Tráiler del prototipo" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="video__caption">Tráiler del prototipo · Hito 2 · 2HN Games</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- CAPTURAS                                       -->
+        <!-- ============================================== -->
+        <section class="section section--alt" id="capturas">
+            <div class="section__inner">
+                <div class="section__head">
+                    <span class="section__num">04 //</span>
+                    <h2 class="section__title">Capturas</h2>
+                    <p class="section__lead">Sustituye los archivos de <code>/images/screenshots/</code> con tus propias
+                        capturas.</p>
+                </div>
+
+                <div class="gallery">
+                    <figure class="gallery__item gallery__item--wide">
+                        <img src="images/screenshots/01-exterior.png" alt="Exploración del exterior con linterna">
+                        <figcaption>Iluminación dinámica en el exterior</figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="images/screenshots/02-combat.png" alt="Combate contra un enemigo">
+                        <figcaption>Combate direccional</figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="images/screenshots/03-inventory.png" alt="Inventario tipo rejilla">
+                        <figcaption>Inventario tipo rejilla</figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="images/screenshots/04-bunker.png" alt="Interior del búnker">
+                        <figcaption>Interior del búnker</figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="images/screenshots/05-upgrade.png" alt="Taller de mejora de armas">
+                        <figcaption>Taller de mejora</figcaption>
+                    </figure>
+                    <figure class="gallery__item gallery__item--wide">
+                        <img src="images/screenshots/06-map.png" alt="Mapa procedural completo">
+                        <figcaption>Generación procedural de mapas</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- DESCARGA                                       -->
+        <!-- ============================================== -->
+        <section class="section" id="descarga">
+            <div class="section__inner">
+                <div class="section__head">
+                    <span class="section__num">05 //</span>
+                    <h2 class="section__title">Descarga / Jugar</h2>
+                    <p class="section__lead">Disponible en itch.io y como build directa en GitHub Releases.</p>
+                </div>
+
+                <div class="download">
+                    <a class="download-card" href="https://julsv.itch.io/atrapalabras" target="_blank" rel="noopener">
+                        <div class="download-card__icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M3 3 L21 3 L21 8 L3 8 Z M4 10 L20 10 L20 21 L4 21 Z M9 13 L15 13 L15 17 L9 17 Z" />
+                            </svg>
+                        </div>
+                        <div class="download-card__body">
+                            <span class="download-card__platform">itch.io</span>
+                            <h3>Página oficial</h3>
+                            <p>Descarga la última build, deja un comentario o danos una propina. Recomendado.</p>
+                        </div>
+                        <span class="download-card__arrow">→</span>
+                    </a>
+
+                    <a class="download-card" href="https://github.com/YOUR_ORG/2HN/releases" target="_blank"
+                        rel="noopener">
+                        <div class="download-card__icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-.99-.02-1.94-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 5.78 0c2.21-1.5 3.18-1.18 3.18-1.18.62 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.13 0 1.54-.01 2.78-.01 3.16 0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z" />
+                            </svg>
+                        </div>
+                        <div class="download-card__body">
+                            <span class="download-card__platform">GitHub Releases</span>
+                            <h3>Builds e instaladores</h3>
+                            <p>Versiones etiquetadas, instalador y código fuente. Para nostálgicos del Releases.</p>
+                        </div>
+                        <span class="download-card__arrow">→</span>
+                    </a>
+                </div>
+
+                <p class="download__note">
+                    <span class="download__note-tag">REQUISITOS</span>
+                    Windows 10/11 · 64-bit. Compatible con teclado/ratón y mando (PS5 / Xbox).
+                </p>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- EQUIPO                                         -->
+        <!-- ============================================== -->
+        <section class="section section--alt" id="equipo">
+            <div class="section__inner">
+                <div class="section__head">
+                    <span class="section__num">06 //</span>
+                    <h2 class="section__title">Equipo · 2HN Games</h2>
+                    <p class="section__lead">Once estudiantes detrás del proyecto. Sustituye los nombres y roles por los
+                        reales.</p>
+                </div>
+
+                <div class="team">
+                    <!-- Por cada miembro: cambia data-initial, el nombre, el rol y el href de GitHub -->
+                    <a class="member" href="https://github.com/A2stedB" target="_blank" rel="noopener">
+                        <div class="member__avatar" data-initial="A"></div>
+                        <div class="member__info">
+                            <span class="member__name">Nombre Apellido</span>
+                            <span class="member__role">Rol en el equipo</span>
+                            <span class="member__handle">@A2stedB</span>
+                        </div>
+                    </a>
+                    <a class="member" href="https://github.com/Axelbc42" target="_blank" rel="noopener">
+                        <div class="member__avatar" data-initial="A"></div>
+                        <div class="member__info">
+                            <span class="member__name">Nombre Apellido</span>
+                            <span class="member__role">Rol en el equipo</span>
+                            <span class="member__handle">@Axelbc42</span>
+                        </div>
+                    </a>
+                    <a class="member" href="https://github.com/CapitanManzana" target="_blank" rel="noopener">
+                        <div class="member__avatar" data-initial="C"></div>
+                        <div class="member__info">
+                            <span class="member__name">Nombre Apellido</span>
+                            <span class="member__role">Rol en el equipo</span>
+                            <span class="member__handle">@CapitanManzana</span>
+                        </div>
+                    </a>
+                    <a class="member" href="https://github.com/Cicl0" target="_blank" rel="noopener">
+                        <div class="member__avatar" data-initial="C"></div>
+                        <div class="member__info">
+                            <span class="member__name">Nombre Apellido</span>
+                            <span class="member__role">Rol en el equipo</span>
+                            <span class="member__handle">@Cicl0</span>
+                        </div>
+                    </a>
+                    <a class="member" href="https://github.com/Gabuu0" target="_blank" rel="noopener">
+                        <div class="member__avatar" data-initial="G"></div>
+                        <div class="member__info">
+                            <span class="member__name">Nombre Apellido</span>
+                            <span class="member__role">Rol en el equipo</span>
+                            <span class="member__handle">@Gabuu0</span>
+                        </div>
+                    </a>
+                    <a class="member" href="https://github.com/InesUcm" target="_blank" rel="noopener">
+                        <div class="member__avatar" data-initial="I"></div>
+                        <div class="member__info">
+                            <span class="member__name">Nombre Apellido</span>
+                            <span class="member__role">Rol en el equipo</span>
+                            <span class="member__handle">@InesUcm</span>
+                        </div>
+                    </a>
+                    <a class="member" href="https://github.com/i1dzz" target="_blank" rel="noopener">
+                        <div class="member__avatar" data-initial="I"></div>
+                        <div class="member__info">
+                            <span class="member__name">Nombre Apellido</span>
+                            <span class="member__role">Rol en el equipo</span>
+                            <span class="member__handle">@i1dzz</span>
+                        </div>
+                    </a>
+                    <a class="member" href="https://github.com/javierlibrada06" target="_blank" rel="noopener">
+                        <div class="member__avatar" data-initial="J"></div>
+                        <div class="member__info">
+                            <span class="member__name">Nombre Apellido</span>
+                            <span class="member__role">Rol en el equipo</span>
+                            <span class="member__handle">@javierlibrada06</span>
+                        </div>
+                    </a>
+                    <a class="member" href="https://github.com/Juliiaa24" target="_blank" rel="noopener">
+                        <div class="member__avatar" data-initial="J"></div>
+                        <div class="member__info">
+                            <span class="member__name">Nombre Apellido</span>
+                            <span class="member__role">Rol en el equipo</span>
+                            <span class="member__handle">@Juliiaa24</span>
+                        </div>
+                    </a>
+                    <a class="member" href="https://github.com/kokote888" target="_blank" rel="noopener">
+                        <div class="member__avatar" data-initial="K"></div>
+                        <div class="member__info">
+                            <span class="member__name">Nombre Apellido</span>
+                            <span class="member__role">Rol en el equipo</span>
+                            <span class="member__handle">@kokote888</span>
+                        </div>
+                    </a>
+                    <a class="member" href="https://github.com/rluy02" target="_blank" rel="noopener">
+                        <div class="member__avatar" data-initial="R"></div>
+                        <div class="member__info">
+                            <span class="member__name">Ricardo</span>
+                            <span class="member__role">Rol en el equipo</span>
+                            <span class="member__handle">@rluy02</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- REFERENCIAS                                    -->
+        <!-- ============================================== -->
+        <section class="section" id="referencias">
+            <div class="section__inner">
+                <div class="section__head">
+                    <span class="section__num">07 //</span>
+                    <h2 class="section__title">Referencias e inspiración</h2>
+                    <p class="section__lead">Juegos y obras que dieron forma a las mecánicas y a la atmósfera de Bunkers
+                        Inc.</p>
+                </div>
+
+                <div class="refs">
+                    <article class="ref">
+                        <h3 class="ref__title">Estructura base ↔ expedición</h3>
+                        <ul>
+                            <li>60 Seconds!</li>
+                            <li>This War of Mine</li>
+                        </ul>
+                        <p>Ciclo por días, presión temporal y tensión de "salir o quedarse".</p>
+                    </article>
+
+                    <article class="ref">
+                        <h3 class="ref__title">Atmósfera y exploración hostil</h3>
+                        <ul>
+                            <li>Darkwood</li>
+                            <li>Project Zomboid</li>
+                        </ul>
+                        <p>Iluminación, sensación de vulnerabilidad y looteo con peso real.</p>
+                    </article>
+
+                    <article class="ref">
+                        <h3 class="ref__title">Roguelike procedural</h3>
+                        <ul>
+                            <li>The Binding of Isaac: Rebirth</li>
+                            <li>Enter the Gungeon</li>
+                        </ul>
+                        <p>Salas conectadas, ritmo de entrar → resolver → loot → avanzar.</p>
+                    </article>
+
+                    <article class="ref">
+                        <h3 class="ref__title">Inventario tipo rejilla</h3>
+                        <ul>
+                            <li>Resident Evil 4</li>
+                            <li>Subnautica</li>
+                            <li>Escape from Tarkov</li>
+                        </ul>
+                        <p>Inventario como puzle espacial: tamaño, organización y decisiones de extracción.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================== -->
+    <!-- FOOTER                                         -->
+    <!-- ============================================== -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__brand-mark">2HN</span>
+                <div>
+                    <p class="footer__brand-title">2HN Games</p>
+                    <p class="footer__brand-sub">Proyecto académico · UCM</p>
+                </div>
+            </div>
+
+            <ul class="footer__links">
+                <li><a href="https://github.com/YOUR_ORG/2HN" target="_blank" rel="noopener">Repositorio GitHub</a></li>
+                <li><a href="https://YOUR_USER.itch.io/bunkers-inc" target="_blank" rel="noopener">itch.io</a></li>
+                <li><a href="#equipo">Créditos</a></li>
+                <li><a href="#referencias">Referencias</a></li>
+            </ul>
+
+            <p class="footer__legal">
+                © <span id="year">2026</span> 2HN Games · Hecho con C++, SDL3, Box2D y mucha cafeína.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

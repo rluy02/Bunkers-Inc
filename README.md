@@ -21,32 +21,6 @@ Tras un evento nuclear global, el exterior está contaminado por radiación y el
 
 Este repo contiene únicamente el **código fuente de la web** del juego. El código fuente del juego en sí vive en un repositorio privado de la organización académica.
 
-```
-.
-├── index.html        # Estructura y contenido
-├── styles.css        # Estilos y paleta
-├── script.js         # Pequeñas interacciones
-├── images/           # Capturas, favicon, OG image
-└── README.md
-```
-
-## Desarrollo local
-
-No hace falta nada especial, es HTML estático. Para previsualizar:
-
-```bash
-# Opción 1: abrir directamente
-# Doble click en index.html (algunas cosas como rutas pueden comportarse raro)
-
-# Opción 2: servidor local (recomendado)
-python -m http.server 8000
-# luego abre http://localhost:8000
-```
-
-## Despliegue
-
-El sitio se despliega automáticamente con GitHub Pages desde la rama `main`.
-
 ## Equipo · 2HN Games
 
 | GitHub | Rol |
@@ -67,8 +41,12 @@ El sitio se despliega automáticamente con GitHub Pages desde la rama `main`.
 
 El **código** de esta web (HTML, CSS, JS) está disponible bajo la [licencia MIT](LICENSE).
 
-Las **capturas, arte, nombre "Bunkers Inc.", logo, lore y demás material creativo** son © 2HN Games — todos los derechos reservados. Su uso requiere permiso expreso del equipo.
+Las **capturas, arte propio, nombre "Bunkers Inc.", logo, lore y demás material creativo** son © 2HN Games — todos los derechos reservados. Su uso requiere permiso expreso del equipo.
 
 ---
+
+## Copyright
+
+No declaramos autoría en los siguientes assets:...
 
 <sub>Hecho con C++, SDL3, Box2D y mucha cafeína.</sub>
