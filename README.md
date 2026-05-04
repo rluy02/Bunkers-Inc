@@ -2,7 +2,7 @@
 
 Sitio web del videojuego **Bunkers Inc.**, un roguelike de supervivencia post-apocalíptico desarrollado por **2HN Games** como parte de la asignatura Proyectos 2 del Grado en Desarrollo de Videojuegos (UCM).
 
-🌐 **[Ver sitio en vivo]([https://tu-usuario.github.io/bunkers-inc/](https://rluy02.github.io/Bunkers-Inc/))**
+🌐 **[Ver sitio en vivo](https://rluy02.github.io/Bunkers-Inc/)**
 
 🎮 **[Jugar en itch.io](https://tu-usuario.itch.io/bunkers-inc)**
 
