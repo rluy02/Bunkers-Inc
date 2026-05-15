@@ -4,7 +4,7 @@ Sitio web del videojuego **Bunkers Inc.**, un roguelike de supervivencia post-ap
 
 🌐 **[Ver sitio en vivo](https://rluy02.github.io/Bunkers-Inc/)**
 
-🎮 **[Jugar en itch.io](https://tu-usuario.itch.io/bunkers-inc)**
+🎮 **[Jugar en itch.io](https://julsv.itch.io/bunkers-inc)**
 
 ---
 
@@ -25,17 +25,17 @@ Este repo contiene únicamente el **código fuente de la web** del juego. El có
 
 | GitHub | Rol |
 |---|---|
-| [@A2stedB](https://github.com/A2stedB) | _Por definir_ |
-| [@Axelbc42](https://github.com/Axelbc42) | _Por definir_ |
-| [@CapitanManzana](https://github.com/CapitanManzana) | _Por definir_ |
-| [@Cicl0](https://github.com/Cicl0) | _Por definir_ |
-| [@Gabuu0](https://github.com/Gabuu0) | _Por definir_ |
-| [@InesUcm](https://github.com/InesUcm) | _Por definir_ |
-| [@i1dzz](https://github.com/i1dzz) | _Por definir_ |
-| [@javierlibrada06](https://github.com/javierlibrada06) | _Por definir_ |
-| [@Juliiaa24](https://github.com/Juliiaa24) | _Por definir_ |
-| [@kokote888](https://github.com/kokote888) | _Por definir_ |
-| [@rluy02](https://github.com/rluy02) | _Por definir_ |
+| [@A2stedB](https://github.com/A2stedB) | Programador |
+| [@Axelbc42](https://github.com/Axelbc42) | Programador /  Diseñador de mapa / Soporte UI |
+| [@CapitanManzana](https://github.com/CapitanManzana) | Programador / Arte / Músico |
+| [@Cicl0](https://github.com/Cicl0) | Programador |
+| [@Gabuu0](https://github.com/Gabuu0) | Programador |
+| [@InesUcm](https://github.com/InesUcm) | Programador / Diseñador de interfaces / Artista |
+| [@i1dzz](https://github.com/i1dzz) | Programador / Arte |
+| [@javierlibrada06](https://github.com/javierlibrada06) | Programador /  Diseñador de interfaces |
+| [@Juliiaa24](https://github.com/Juliiaa24) | Programador /  Diseñador de interfaces |
+| [@kokote888](https://github.com/kokote888) | Programador / Diseñador |
+| [@rluy02](https://github.com/rluy02) | Programador / Scrum Master / Animaciones |
 
 ## Licencia
 
