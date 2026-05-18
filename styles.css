@@ -707,6 +707,22 @@ strong { color: var(--accent-bright); font-weight: 700; }
     font-size: 0.95rem;
 }
 
+/* Contenedor de dos vídeos en la sección de tráiler */
+.videos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* En pantallas medianas/pequeñas, apila uno encima del otro */
+@media (max-width: 900px) {
+    .videos {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
+
 
 /* =========================================================
    13. CAPTURAS — galería con item ancho ocasional
