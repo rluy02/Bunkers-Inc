@@ -19,7 +19,7 @@ Tras un evento nuclear global, el exterior está contaminado por radiación y el
 
 ## Sobre este repositorio
 
-Este repo contiene únicamente el **código fuente de la web** del juego. El código fuente del juego en sí vive en un repositorio privado de la organización académica.
+Este repositorio contiene únicamente el **código fuente de la web** del juego. El código fuente del juego en sí vive en un repositorio privado de la organización académica.
 
 ## Equipo · 2HN Games
 
@@ -37,16 +37,77 @@ Este repo contiene únicamente el **código fuente de la web** del juego. El có
 | [@kokote888](https://github.com/kokote888) | Programador / Diseñador |
 | [@rluy02](https://github.com/rluy02) | Programador / Scrum Master / Animaciones |
 
+<sub>Hecho con C++, SDL3, Box2D y mucha cafeína.</sub>
+
 ## Licencia
 
 El **código** de esta web (HTML, CSS, JS) está disponible bajo la [licencia MIT](LICENSE).
 
-Las **capturas, arte propio, nombre "Bunkers Inc.", logo, lore y demás material creativo** son © 2HN Games — todos los derechos reservados. Su uso requiere permiso expreso del equipo.
+Las **capturas, arte propio, nombre "Bunkers Inc.", logo, lore y demás material creativo** son de © 2HN Games — todos los derechos reservados. Su uso requiere permiso expreso del equipo.
 
 ---
 
 ## Copyright
 
-No declaramos autoría en los siguientes assets:...
+No declaramos autoría en los siguientes assets:
 
-<sub>Hecho con C++, SDL3, Box2D y mucha cafeína.</sub>
+- **Mixamo** — Animaciones y modelos de enemigos. A posteriori se post-procesaron por código en Blender para modificar texturas, resolución y paleta de colores.
+  
+  - URL: <https://www.mixamo.com/>
+
+- **Sketchfab** — Modelo 3D del jugador: *Poppy Playtime Chapter 5 - Hazmat Guy*.
+  
+  - URL: <https://sketchfab.com/3d-models/poppy-playtime-chapter-5-hazmat-guy-55d5700dae434d1babce4e2f7e939a31>
+  - Licencia: CC Attribution-NonCommercial.
+  
+  ---
+
+### Sonidos (SFXs)
+
+**Sound Effects — freesound_community (Pixabay):**
+
+- Cerrar libro.
+- Estampar sello.
+- Hover botón.
+- Botón.
+- Dormir (1 y 2).
+- Logro / discovery.
+- Drop item inventario.
+- Recoger item inventario.
+- Notificación: “no puedes dejar esto aquí”.
+- Disparo con arco de los enemigos.
+- Pasos.
+- Open letter.
+- Signed letter.
+- Pasar página.
+- Estática de la radio.
+- Golpe de yunque.
+
+**Sound Effects — Emiliano Dleon (Pixabay):**
+
+- Presionar botón.
+
+**Sound Effects — DRAGON-STUDIO (Pixabay):**
+
+- Dormir (3).
+- Ataque del jugador.
+
+**Sound Effects — Yodguard (Pixabay):**
+
+- Ataques melee de los enemigos.
+
+**Sound Effects — Kuzu (Pixabay):**
+
+- Tutorial escribiéndose.
+
+**Sound Effects — u_nfmiq7z9as (Pixabay):**
+
+- Muerte del jugador (SFX).
+
+**Sound Effects - M_R_Fahrenheit (Pixabay):**
+
+- Sonido Sabana.
+
+**Sound Effects - Universfield (Pixabay):**
+
+- Abrir puerta pesada de metal.
